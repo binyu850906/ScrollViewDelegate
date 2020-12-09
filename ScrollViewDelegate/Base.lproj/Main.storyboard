@@ -1,24 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Page Control View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PageControlViewController" customModule="ScrollViewDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t81-S1-9tj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-Cc-2S4">
+                                        <rect key="frame" x="0.0" y="0.0" width="2070" height="896"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星海1" translatesAutoresizingMaskIntoConstraints="NO" id="Xrd-1L-71K">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星海2" translatesAutoresizingMaskIntoConstraints="NO" id="P8G-0Y-SfX">
+                                                <rect key="frame" x="414" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星海3" translatesAutoresizingMaskIntoConstraints="NO" id="M6N-or-HxY">
+                                                <rect key="frame" x="828" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星海4" translatesAutoresizingMaskIntoConstraints="NO" id="zE9-zG-Yda">
+                                                <rect key="frame" x="1242" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星海5" translatesAutoresizingMaskIntoConstraints="NO" id="eCO-t2-gkc">
+                                                <rect key="frame" x="1656" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BhS-Cc-2S4" firstAttribute="bottom" secondItem="kkJ-kT-9bZ" secondAttribute="bottom" id="1cV-Ec-P6C"/>
+                                    <constraint firstItem="BhS-Cc-2S4" firstAttribute="leading" secondItem="kkJ-kT-9bZ" secondAttribute="leading" id="5jv-de-kpF"/>
+                                    <constraint firstItem="BhS-Cc-2S4" firstAttribute="trailing" secondItem="kkJ-kT-9bZ" secondAttribute="trailing" id="AmW-dN-lQm"/>
+                                    <constraint firstItem="Xrd-1L-71K" firstAttribute="width" secondItem="BFH-kv-KIu" secondAttribute="width" id="FBz-Uq-Ojy"/>
+                                    <constraint firstItem="Xrd-1L-71K" firstAttribute="height" secondItem="BFH-kv-KIu" secondAttribute="height" id="QZc-Fv-lLz"/>
+                                    <constraint firstItem="BhS-Cc-2S4" firstAttribute="top" secondItem="kkJ-kT-9bZ" secondAttribute="top" id="iFC-LI-LGB"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="kkJ-kT-9bZ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="BFH-kv-KIu"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9qc-YS-zd1"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-Nx-J54">
+                                <rect key="frame" x="145" y="828.5" width="124" height="27.5"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="changePage:" destination="BYZ-38-t0r" eventType="valueChanged" id="lcj-Hc-JMf"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t81-S1-9tj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1WJ-W8-NlR"/>
+                            <constraint firstItem="t81-S1-9tj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8k1-iX-yx5"/>
+                            <constraint firstAttribute="bottom" secondItem="pt8-Nx-J54" secondAttribute="bottom" constant="40" id="ISE-KT-XdY"/>
+                            <constraint firstAttribute="trailing" secondItem="t81-S1-9tj" secondAttribute="trailing" id="j7F-pf-Hl3"/>
+                            <constraint firstItem="pt8-Nx-J54" firstAttribute="centerX" secondItem="t81-S1-9tj" secondAttribute="centerX" id="nzh-gu-hnZ"/>
+                            <constraint firstItem="pt8-Nx-J54" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="rep-fi-Uh1"/>
+                            <constraint firstAttribute="bottom" secondItem="t81-S1-9tj" secondAttribute="bottom" id="tum-gF-c7E"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="pt8-Nx-J54" id="fWw-i4-fzL"/>
+                        <outlet property="scrollView" destination="t81-S1-9tj" id="ajD-IM-QmT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="星海1" width="998" height="1320"/>
+        <image name="星海2" width="554" height="900"/>
+        <image name="星海3" width="1280" height="1677"/>
+        <image name="星海4" width="1218" height="1716"/>
+        <image name="星海5" width="576" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
