@@ -46,4 +46,14 @@ extension PageControlViewController: UIScrollViewDelegate {
                 pageControl.currentPage = Int(page)
             
         }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+           for pageView in scrollView.subviews {
+              if pageView.isKind(of: UIView.self){
+                 return pageView
+              }
+           }
+           return nil
+        }
+    
 }
